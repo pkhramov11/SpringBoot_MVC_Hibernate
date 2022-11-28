@@ -4,7 +4,6 @@ import com.khramov.springboot_mvc_data.model.Employee;
 
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +13,8 @@ import java.util.List;
 @Repository
 public class EmployeeDaoImpl implements EmployeeDAO {
 
-    public final EntityManager entityManager;
+
+    public EntityManager entityManager;
 
     @Autowired
     public EmployeeDaoImpl(EntityManager entityManager) {
@@ -29,8 +29,18 @@ public class EmployeeDaoImpl implements EmployeeDAO {
 
     @Override
     public void addEmployee(Employee employee) {
-        entityManager.persist(employee);
+        entityManager.merge(employee);
 
 
+    }
+
+    @Override
+    public Employee getEmployee(int id) {
+        return entityManager.find(Employee.class, id);
+    }
+
+    @Override
+    public void deleteEmployee(Employee employee) {
+        entityManager.remove(employee);
     }
 }

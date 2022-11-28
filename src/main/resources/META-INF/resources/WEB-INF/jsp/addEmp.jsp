@@ -10,8 +10,8 @@
 
 <h2> Employee info</h2>
 <br>
-<%--@elvariable id="emp" type=""--%>
-<form:form action="saveEmployee" modelAttribute="emp">
+
+<form:form action="saveEmployee" modelAttribute="employee">
 
   <form:hidden path="id"/>
 

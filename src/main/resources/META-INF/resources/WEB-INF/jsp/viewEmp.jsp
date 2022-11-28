@@ -19,8 +19,8 @@
     <c:forEach var="emp" items="${allEmp}">
 
         <c:url var="updateButton" value="/updateInfo">
-            <c:param name="empId" value="${emp.id}">
-            </c:param>
+            <c:param name="empId" value="${emp.id}"/>
+<%--            </c:param>--%>
         </c:url>
 
         <c:url var="deleteButton" value="/deleteEmployee">
