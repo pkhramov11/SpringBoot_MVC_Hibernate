@@ -26,4 +26,14 @@ public class MyController {
          model.addAttribute("allEmp", list);
          return "viewEmp";
      }
+
+    @RequestMapping("/add")
+    public String addEmployee(Model model){
+        Employee employee = new Employee();
+        employeeService.addEmployee(employee);
+        model.addAttribute("emp", employee);
+        return "addEmp";
+    }
+
+
 }

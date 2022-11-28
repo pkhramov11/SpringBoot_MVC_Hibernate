@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface EmployeeService {
     public List<Employee> allEmployee();
+    public void addEmployee(Employee employee);
 }
