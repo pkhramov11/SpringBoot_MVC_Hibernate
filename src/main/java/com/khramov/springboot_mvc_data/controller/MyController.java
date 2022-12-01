@@ -32,7 +32,7 @@ public class MyController {
 
     @RequestMapping("/addNewEmployee")
     public String addEmployee(Model model){
-        @Valid
+
         Employee employee = new Employee();;
         model.addAttribute("employee", employee);
         return "addEmp";
