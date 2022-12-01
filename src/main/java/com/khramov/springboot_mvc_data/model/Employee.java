@@ -22,7 +22,6 @@ public class Employee {
     @NotEmpty
     private String name;
     @Column(name = "surname")
-    @Size(min = 2, message = "surname must be min 2 symbols")
     private String surname;
     @Column(name = "department")
     @NotEmpty
